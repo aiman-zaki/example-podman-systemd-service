@@ -1,0 +1,11 @@
+[Unit]
+Description=Poostgresql container
+
+[Service]
+ExecStart=/usr/bin/podman start -a postgres
+ExecStop=/usr/bin/podman stop -t 2 postgres
+User=aiman
+
+
+[Install]
+WantedBy=default.target
